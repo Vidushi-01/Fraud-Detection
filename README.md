@@ -1,66 +1,21 @@
-# Fraud-Detection
-This project is all about spotting fraudulent financial transactions using Python and data analysis. We worked with a real-world credit card transaction dataset, which includes both normal and fraudulent activities. Each transaction comes with anonymized features (named V1 to V28), the transaction amount, time, and a label showing whether it was fraud or not. The goal was to find patterns that can help us tell the difference between genuine and suspicious transactions.
+# Credit Card Fraud Analysis with PowerBI Visualization
 
-We started by cleaning the data—checking for missing values, scaling the numbers so they're easier to work with, and handling any extreme values that might throw off the analysis. Then we explored the data visually using graphs to see how different features behave in fraud vs. non-fraud cases. We found that some features like V1, V3, V10, and V11 show very different patterns when fraud is involved, which is super helpful for building a detection model.
+## Overview
 
-Even though building a full machine learning model wasn’t the main focus here, this project lays the groundwork for doing that next. Tools like Logistic Regression or Random Forest could be used to predict fraud based on the patterns we found. We also looked into using Power BI to create visual dashboards, making it easier to see trends and explain the findings. In short, this project gives a solid starting point for creating smarter fraud detection systems using data.
- 
-HOW TO RUN:
- 
-Install Requirements
-  .Python (version 3.8+)
-  .Required libraries:
-     pandas, numpy, matplotlib, seaborn, scikit-learn, jupyter
-     
-Install via:
-  pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+This repository contains an implementation of credit card fraud detection using Random Forest and Decision Trees. Credit card fraud is a significant issue in the financial industry, and machine learning algorithms offer effective solutions for detecting fraudulent transactions.
 
-Download Dataset
- Source: Kaggle – Credit Card Fraud Detection
- File: creditcard.csv
- Save it in your project folder
- 
-Launch Jupyter Notebook
-  .Run: jupyter notebook in terminal or command prompt
-  .Create a new notebook (e.g., Fraud_Detection.ipynb)
-  
-Load the Data
-  .Use pandas to read the dataset:
-    import pandas as pd
-    df = pd.read_csv("creditcard.csv")
-    df.head()
-    
-Clean and Preprocess
-  .Check for missing values
-  .Scale Amount and Time:
-   from sklearn.preprocessing import StandardScaler
-   df['Amount_scaled'] = StandardScaler().fit_transform(df[['Amount']])
-   df['Time_scaled'] = StandardScaler().fit_transform(df[['Time']])
-   
-Exploratory Data Analysis (EDA)
-   .Class balance:
-    sns.countplot(x='Class', data=df)
-    KDE or distribution plots for features like V1, V3, V10, V11
+## How It Works
 
-Build a Model
-  .Use train_test_split, RandomForestClassifier, etc.
+1. **Data Preprocessing**: The dataset containing credit card transactions is preprocessed to handle missing values, normalize features, and balance the classes if necessary.
 
-Evaluate with metrics like accuracy, precision, recall, F1-score
+2. **Model Training**: Both Random Forest and Decision Tree classifiers are trained on the preprocessed data. Random Forest is an ensemble learning method that builds multiple decision trees and merges their outputs to improve accuracy and reduce overfitting. Decision Trees are simple yet powerful classifiers that work by recursively partitioning the feature space.
 
+3. **Model Evaluation**: The trained models are evaluated using performance metrics such as accuracy, precision, recall, and F1-score. These metrics provide insights into the model's ability to correctly classify fraudulent and non-fraudulent transactions.
 
-Export CSV:
-  .df.to_csv("processed_data.csv", index=False)
-Import into Power BI and create visuals (e.g., fraud trends, feature analysis)
+4. **Deployment**: Once trained and evaluated, the best-performing model can be deployed in a real-world scenario to detect credit card fraud in real-time.
 
+## PowerBI Dashboard: 
 
+![Credit Card Fraud Detection](CreditCard_Dashboard.png)
 
-
-
-
-
-
-
-
- Outcome:
-This project lays the foundation for a robust fraud detection system, helping financial institutions identify high-risk transactions and reduce financial losses. The combination of EDA, visualization, and machine learning creates a powerful data-driven solution for real-time fraud prevention.
-
+Link to the PowerBi live Dashboard: https://app.powerbi.com/view?r=eyJrIjoiYjk0Mjg4NGEtZDc5Mi00MzcyLWJmMDEtNzQ3YzU2MzM4ZDQxIiwidCI6Ijg0YzMxY2EwLWFjM2ItNGVhZS1hZDExLTUxOWQ4MDIzM2U2ZiIsImMiOjZ9
