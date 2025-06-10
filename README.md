@@ -16,6 +16,4 @@ This repository contains an implementation of credit card fraud detection using 
 
 ## PowerBI Dashboard: 
 
-![Credit Card Fraud Detection](CreditCard_Dashboard.png)
 
-Link to the PowerBi live Dashboard: https://app.powerbi.com/view?r=eyJrIjoiYjk0Mjg4NGEtZDc5Mi00MzcyLWJmMDEtNzQ3YzU2MzM4ZDQxIiwidCI6Ijg0YzMxY2EwLWFjM2ItNGVhZS1hZDExLTUxOWQ4MDIzM2U2ZiIsImMiOjZ9
